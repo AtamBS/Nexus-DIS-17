@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="../lib/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/login.css">
+
+    <meta charset="UTF-8">
+    <title>Signup</title>
+</head>
+<body>
+
+<!-- Der er i dette HTML-dokument anvendt kode fra Bootstrap. Se bootstrap.css for copyright-->
+
+<!--Navbar-->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">CAFE NEXUS</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<box class="box">
+
+<!-- Nedenstående er der brugt kopieret kode. Se Style.css for copyright-->
+
+
+    <div class="container">
+
+        <div class="row" id="nav-container"></div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="page-header">
+                    <h1 style="text-align:center;">Opret bruger til Cafe Nexus</h1>
+                    <div id="load-test"></div>
+                </div>
+
+
+    <div id="login">
+
+        <form method="post">
+
+                <div class="signup">
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="inputFirstName" placeholder="Fornavn">
+                    </div>
+
+                    <div class="form-group">
+                    <input type="text" class="form-control" id="inputLastName" placeholder="Efternavn">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="inputUsername" placeholder="Brugernavn">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="inputPassword" placeholder="Adgangskode">
+                    </div>
+
+                    <button style="margin-bottom: 40px" class="btn btn-default" id="createUserButton">Opret bruger</button>
+
+                </div>
+
+
+        </form>
+
+        <!--Redirecter til login.html, hvis man vil logge ind-->
+        <p>Har du allerede en bruger? Klik <a href="login.html" class="blue">her</a> for at vende tilbage til login.</p>
+
+    </div> <!-- end signup -->
+
+</div>
+
+</box>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">2017 © All rights reserved - Cafe Nexus Inc.</p>
+        <p class="text-muted">Adam Brønnum Schou 3. Semester HA(IT)</p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="../lib/js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="../js/sdk.js"></script>
+<script type="text/javascript" src="../js/signup.js"></script>
+<script type="text/javascript" src="../lib/js/bootstrap.js"></script>
+
+</body>
+</html>

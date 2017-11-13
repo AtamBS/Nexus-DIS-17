@@ -1,0 +1,28 @@
+nav {
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+dd {
+    margin-bottom: 10px;
+}
+
+.book-container .panel-body {
+    min-height: 242px;
+}
+.book-container img {
+    height: 120px;
+}
+.book-container .price-label {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.book-container .price-label p {
+    margin: 4px 0 0 0;
+}
+
+footer {
+font-size:15px; font-weight:bold; margin-top: 275px; text-align: center; padding-bottom:45px;}
+
+

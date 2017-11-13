@@ -1,5 +1,16 @@
-.login{
-
-    font-size: large;
-    color: black;
+/* ---------- LOGIN ---------- */
+.box {
+    position: absolute;
+    top: 80px;
+    left: 32%;
+    width: 35px;
+    height:500px;
+    border: transparent;
 }
+
+.footer {
+    font-size:15px;
+    font-weight:bold;
+    margin-top: 550px;
+    text-align: center;
+    padding-bottom:45px;}
