@@ -12,34 +12,13 @@
 
 <!-- Der er i dette HTML-dokument anvendt kode fra Bootstrap. Se bootstrap.css for copyright-->
 
-<!--Navbar-->
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
 
-
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">CAFE NEXUS</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<box class="box">
-
-<!-- Nedenstående er der brugt kopieret kode. Se Style.css for copyright-->
+    <!-- Nedenstående er der brugt kopieret kode. Se Style.css for copyright-->
 
 
     <div class="container">
 
-        <div class="row" id="nav-container"></div>
+
 
         <div class="row">
             <div class="col-lg-6">
@@ -49,67 +28,65 @@
                 </div>
 
 
-    <div id="login">
+                <div id="login">
 
-        <form method="post">
+                    <div class="signup">
 
-                <div class="signup">
+                        <div class="form-group">
+                            <label class="control-label" for="inputFirstName">Type a firstname</label>
+                            <input type="text" class="form-control" id="inputFirstName" placeholder="Type a firstname">
+                        </div>
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="inputFirstName" placeholder="Firstname">
-                    </div>
+                        <div class="form-group">
+                            <label class="control-label" for="inputFirstName">Type a lastname</label>
+                            <input type="text" class="form-control" id="inputLastName" placeholder="Lastname">
+                        </div>
 
-                    <div class="form-group">
-                    <input type="text" class="form-control" id="inputLastName" placeholder="Lastname">
-                    </div>
+                        <div class="form-group">
+                            <label class="control-label" for="inputFirstName">Type an email</label>
+                            <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                        </div>
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="inputUsername" placeholder="Username">
-                    </div>
+                        <div class="form-group">
+                            <label class="control-label" for="inputGender">Type sex, either m or f</label>
+                            <input type="text" class="form-control" id="inputGender" placeholder="Gender">
+                        </div>
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="inputDescription" placeholder="Description">
-                    </div>
+                        <div class="form-group">
+                            <label class="control-label" for="inputFirstName">Type a major</label>
+                            <input type="text" class="form-control" id="inputMajor" placeholder="Major at CBS">
+                        </div>
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="inputMajor" placeholder="Major at CBS">
-                    </div>
+                        <div class="form-group">
+                            <label class="control-label" for="inputSemester">Insert semester between 1-6</label>
+                            <input type="text" class="form-control" id="inputSemester" placeholder="Semester">
+                        </div>
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="inputSemester" placeholder="Semester">
-                    </div>
+                       <div class="form-group">
+                           <label class="control-label" for="inputFirstName">Type a password</label>
+                           <input type="text" class="form-control" id="inputPassword" placeholder="Password">
+                       </div>
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
-                    </div>
+                        <div class="form-group">
+                            <label class="control-label" for="inputDescription">Type a short description</label>
+                            <input type="text" class="form-control" id="inputDescription" placeholder="Description">
+                        </div>
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="inputPassword" placeholder="Password">
-                    </div>
+                       <button style="margin-bottom: 40px" class="btn btn-default" id="createUserButton">Create a
+                           user
+                       </button>
 
-                    <form action="">
-                        <input type="radio" name="gender" value="male"> Male<br>
-                        <input type="radio" name="gender" value="female"> Female<br>
-                    </form>
+                   </div>
 
-                    <button style="margin-bottom: 40px" class="btn btn-default" id="createUserButton">Create a user</button>
+                   <!--Redirecter til login.html, hvis man vil logge ind-->
+                    <p>Don't have a user? Click <a href="login.html" class="blue">here</a> for returning to login page.</p>
 
-                </div>
+                </div> <!-- end signup -->
 
-
-        </form>
-
-        <!--Redirecter til login.html, hvis man vil logge ind-->
-        <p>Don't have a user? Cllik <a href="login.html" class="blue">here</a> for returning to login page.</p>
-
-    </div> <!-- end signup -->
-
-</div>
-
-</box>
+            </div>
 
 
-<script type="text/javascript" src="../lib/js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="../lib/js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="../js/sdk.js"></script>
 <script type="text/javascript" src="../js/signup.js"></script>
 <script type="text/javascript" src="../lib/js/bootstrap.js"></script>

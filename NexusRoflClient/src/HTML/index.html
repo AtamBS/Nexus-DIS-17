@@ -18,65 +18,50 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+<div class="container">
 
+    <div class="row" id="nav-container"></div>
 
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">CAFE NEXUS</a></li>
-                <li><a href="profil.html">Profile</a></li>
-                <li><a href="createEvents.html">Create event</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="post.hmtl">Posts</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.html">Log out</a></li>
-            </ul>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="container-fluid text-center">
+                <div class="row content">
+
+                    <div class="col-sm-8 text-left">
+                        <h1 align="CENTER"> Welcome to Cafe Nexus! </h1>
+                        <p>Café Nexus is so much more than just mind-blowingly good coffee during the week; it's your party destination on Thursdays! With different DJs every Thursday there's always a reason to go to Café Nexus to have an awesome time!</p>
+                        <p>This website gives you the possibility to create events on Cafe Nexus!</p>
+                        <hr>
+                        <img src="http://medie.cbs.dk/sites/default/files/styles/colorbox_fullscreen/public/Semesterstart%202.jpg?itok=Fe_CJ3lU" class="img-circle" alt="Cafe Nexus image"
+                             style="width: 420px; height:260px;">
+                        <hr>
+                        <p>Located at Copenhagen Business School Café Nexus offers a perfect combination of studying and partying (with a slight emphasis on partying of course...)</p>
+                        <h3>Find us!</h3>
+                        <p>Solbjerg Plads 3 Frederiksberg Denmark</p>
+
+                    </div>
+
+                </div>
+
         </div>
     </div>
-</nav>
-
-<align class="align">
-
-<div class="container-fluid text-center">
-    <div class="row content">
-
-        <div class="col-sm-8 text-left">
-            <h1>Welcome to Cafe Nexus</h1>
-            <p>Café Nexus is so much more than just mind-blowingly good coffee during the week; it's your party destination on Thursdays! With different DJs every Thursday there's always a reason to go to Café Nexus to have an awesome time!</p>
-            <p>This website gives you the possibility to create events on Cafe Nexus!</p>
-            <hr>
-            <img src="http://medie.cbs.dk/sites/default/files/styles/colorbox_fullscreen/public/Semesterstart%202.jpg?itok=Fe_CJ3lU" class="img-circle" alt="Cafe Nexus image"
-            style="width: 420px; height:260px;">
-            <hr>
-            <p>Located at Copenhagen Business School Café Nexus offers a perfect combination of studying and partying (with a slight emphasis on partying of course...)</p>
-            <h3>Find us!</h3>
-            <p>Solbjerg Plads 3 Frederiksberg Denmark</p>
-
-        </div>
-
 </div>
 
-
-
-
-
+    <footer class="footer">
         <div class="container">
-            <p class="text-muted">2017 © All rights reserved - Cafe Nexus Inc.</p>
-            <p class="text-muted">Adam Brønnum Schou 3. Semester HA(IT)</p>
+            <p class="text-muted" align="CENTER">2017 © All rights reserved - Cafe Nexus Inc.</p>
+            <p class="text-muted" align="CENTER">Adam Brønnum Schou 3. Semester HA(IT)</p>
         </div>
+    </footer>
 
-</align>
+<script src="../lib/js/jquery-3.2.1.js"></script>
+<script src="../lib/js/bootstrap.js"></script>
+<script src="../js/sdk.js"></script>
+<script>
+    SDK.User.loadNav();
+</script>
 
-    <script src=/.."https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src=/.."https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+

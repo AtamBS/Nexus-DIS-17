@@ -2,7 +2,7 @@ const SDK = {
     serverURL: "http://localhost:8080/api",
     request: (options, cb) => {
 
-        let token = {"AUTHORIZATION":localStorage.getItem("token")}
+        let token = {"AUTHORIZATION": localStorage.getItem("token")}
 
         $.ajax({
             url: SDK.serverURL + options.url,
@@ -11,6 +11,7 @@ const SDK = {
             contentType: "application/json",
             dataType: "json",
             data: JSON.stringify(options.data),
+
             success: (data, status, xhr) => {
                 cb(null, data, status, xhr);
             },
@@ -20,18 +21,43 @@ const SDK = {
         });
 
     },
+
+
     User: {
+        createUser: (firstName, lastName, email, description, gender, major, password, semester, cb) => {
+            SDK.request({
+                data: {
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    gender: gender,
+                    major: major,
+                    semester: semester,
+                    password: password,
+                    description: description
+                },
+                url: "/users",
+                method: "POST"
+            }, cb)
+        },
+
         findAll: (cb) => {
-            SDK.request({method: "GET", url: "/staffs"}, cb);
+            SDK.request({
+                    method: "GET",
+                    url: "/users"
+
+                },
+                cb);
         },
         current: () => {
-            return SDK.Storage.load("user");
+            return SDK.Storage.load("userId");
         },
+
         logOut: () => {
-            SDK.Storage.remove("tokenId");
+            SDK.Storage.remove("token");
             SDK.Storage.remove("userId");
             SDK.Storage.remove("user");
-            window.location.href = "index.html";
+            window.location.href = "../HTML/index.html";
         },
         login: (email, password, cb) => {
             SDK.request({
@@ -45,11 +71,11 @@ const SDK = {
 
                 //On login-error
                 if (err) return cb(err);
-/*
-                SDK.Storage.persist("tokenId", data.id);
-                SDK.Storage.persist("userId", data.userId);
-                SDK.Storage.persist("user", data.user);
-*/
+                /*
+                                SDK.Storage.persist("tokenId", data.id);
+                                SDK.Storage.persist("userId", data.userId);
+                                SDK.Storage.persist("user", data.user);
+                */
                 localStorage.setItem("token", data);
                 cb(null, data);
 
@@ -58,45 +84,63 @@ const SDK = {
         loadNav: (cb) => {
             $("#nav-container").load("nav.html", () => {
                 const currentUser = SDK.User.current();
-                if (currentUser) {
-                    $(".navbar-right").html(`
-            <li><a href="my-page.html">Your orders</a></li>
-            <li><a href="#" id="logout-link">Logout</a></li>
-          `);
-                } else {
-                    $(".navbar-right").html(`
-            <li><a href="login.html">Log-in <span class="sr-only">(current)</span></a></li>
-          `);
-                }
+
                 $("#logout-link").click(() => SDK.User.logOut());
                 cb && cb();
             });
         }
     },
+
+    //Følgende metoder bliver tilgængelige, når man er logget ind som bruger.
     Event: {
-        addTobasket: (event) => {
-            let basket = SDK.Storage.load("basket")
+        createEvent: (owner_id, title, startDate, endDate, description, cb) => {
+            SDK.request({
+                data: {
+                    owner_id: owner_id,
+                    title: title,
+                    startDate: startDate,
+                    endDate: endDate,
+                    description: description
+                },
+                url: "/events",
+                method: "POST",
+                headers: {
+                    Authorization: "Bearer " + SDK.Storage.load("token")
+                }
+            }, cb)
+        },
+        findAllEvents: (cb) => {
+            SDK.request({
 
-                  //Has anything been added to the basket before?
+                method: "GET",
+                url: "/events",
+                headers: {
+                    Authorization: "Bearer " + SDK.Storage.load("token")
+                }
+            }, cb)
+        },
+    },
 
-                  if (!basket) {
-                      return SDK.Storage.persist("basket", [{
-                          count: 1,
-                          event: event
 
-                      }]);
-                  }
-                  //Does the event already exist?
-                  let foundEvent = basket.find(b => b.event.id === event.id);
-                  if (foundEvent) {
-                      let i = basket.indexOf(foundEvent);
-                      basket[i].count++;
-                  } else {
-                      basket.push({
-                          count: 1,
-                          event: event
-                      });
-                  }
-                   SDK.Storage.persist("basket", basket);
-                   },
+        Storage: {
+            prefix: "CafeNexusSDK", //Prefix for at det ikke bliver overwritet af andre med samme navn.
+            persist: (key, value) => {
+                window.localStorage.setItem(SDK.Storage.prefix + key, (typeof value === 'object') ? JSON.stringify(value) : value)
+            },
+            load: (key) => {
+                const val = window.localStorage.getItem(SDK.Storage.prefix + key);
+                try {
+                    return JSON.parse(val);
+                }
+                catch (e) {
+                    return val;
+                }
+            },
+            remove: (key) => {
+                window.localStorage.removeItem(SDK.Storage.prefix + key);
             }
+        }
+
+};
+
+

@@ -6,101 +6,59 @@
     <link rel="stylesheet" href="../css/main.css">
 
     <meta charset="UTF-8">
-    <title>Checkout - DIS Bookstore 2017</title>
+
+    <title>Create Event - Cafe Nexus</title>
 
 </head>
 <body>
-
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">CAFE NEXUS</a></li>
-                <li><a href="profil.html">Profile</a></li>
-                <li><a href="createEvents.html">Create event</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="post.hmtl">Posts</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.html">Log out</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
 
 <div class="container">
 
     <div class="row" id="nav-container"></div>
 
-    <div class="row" id="order-alert-container">
-        <div class="col-lg-12">
-            <div class="alert alert-success" role="alert" style="display: none">
-                <strong>Your order has been completed!</strong>
+    <div class="row">
+        <div class="col-lg-6">
+
+            <div class="page-header">
+                <h1>To create an event, fill out the following information:</h1>
             </div>
+            <div class="form-group">
+                <label class="control-label" for="inputTitle">Title</label>
+                <input type="title" class="form-control" id="inputTitle" placeholder="Title">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="inputStartDate">Startdate</label>
+                <input type="yyyy-mm-dd hh:mm:ss" class="form-control" id="inputStartDate" placeholder="Startdate: yyyy-mm-dd hh:mm:ss ">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="inputEndDate">Enddate</label>
+                <input type="yyyy-mm-dd hh:mm:ss" class="form-control" id="inputEndDate" placeholder="Enddate: yyyy-mm-dd hh:mm:ss">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="inputDescription">Description</label>
+                <input type="description" class="form-control" id="inputDescription" placeholder="Description">
+                <button style="margin-top: 30px" class="btn btn-default" id="create-button">Create Event</button>
+            </div>
+
         </div>
     </div>
 
-    <div id="checkout-table-container">
-        <div class="row">
-            <div class="col-lg-12">
-
-                <div class="page-header">
-                    <h1>Events</h1>
-                </div>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th></th>
-                        <th>Title</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Total</th>
-                    </tr>
-                    </thead>
-                    <tbody id="basket-tbody">
-                    </tbody>
-                </table>
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-offset-6 text-right" id="checkout-actions">
-                <button class="btn btn-default btn-lg" id="clear-basket-button">Clear basket</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="nothing-in-basket-container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>No items found in basket :(</h2>
-            </div>
-        </div>
-    </div>
 
 </div>
 
 <footer class="footer">
     <div class="container">
-        <p class="text-muted">2016 © All rights reserved - Awesome Bookstore Inc.</p>
+        <p class="text-muted">2017 © All rights reserved - Café Nexus.</p>
     </div>
 </footer>
 
 <script src="../lib/js/jquery-3.2.1.js"></script>
 <script src="../lib/js/bootstrap.js"></script>
 <script src="../js/sdk.js"></script>
-<script src="../js/checkout.js"></script>
+<script src="../js/createEvent.js"></script>
 
 </body>
 </html>
