@@ -121,7 +121,6 @@ const SDK = {
         },
     },
 
-
         Storage: {
             prefix: "CafeNexusSDK", //Prefix for at det ikke bliver overwritet af andre med samme navn.
             persist: (key, value) => {
