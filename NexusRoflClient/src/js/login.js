@@ -10,9 +10,13 @@ $(document).ready(() => {
         SDK.User.login(email, password, (err, data) => {
             if (err && err.xhr.status === 401) {
                 $(".form-group").addClass("has-error");
+
+             //
+             alert('Emailen matcher ikke adgangskoden');
+
             }
             else if (err){
-                console.log("BAd stuff happened")
+                console.log("Fejl consol")
             } else {
                 window.location.href = "index.html";
             }

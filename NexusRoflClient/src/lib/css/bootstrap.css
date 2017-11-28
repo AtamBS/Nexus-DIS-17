@@ -2096,24 +2096,37 @@ pre code {
   }
   .col-lg-12 {
     width: 100%;
+
   }
   .col-lg-11 {
-    width: 91.66666667%;
-  }
-  .col-lg-10 {
-    width: 83.33333333%;
-  }
-  .col-lg-9 {
-    width: 75%;
-  }
-  .col-lg-8 {
     width: 66.66666667%;
   }
+  .col-lg-10 {
+    height:800px;
+    width: 100%;
+    left: 1%;
+  }
+  .col-lg-9 {
+    height:350px;
+    width: 80%;
+    left: 10%;
+
+  }
+  .col-lg-8 {
+    height:435px;
+    width: 100%;
+    left: 20%;
+  }
   .col-lg-7 {
-    width: 58.33333333%;
+    height:450px;
+    width: 50%;
+    left: 25%;
   }
   .col-lg-6 {
+    height:650px;
     width: 50%;
+    left: 25%;
+
   }
   .col-lg-5 {
     width: 41.66666667%;

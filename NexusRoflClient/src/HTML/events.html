@@ -5,36 +5,44 @@
     <link rel="stylesheet" href="../lib/css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css">
 
+
     <meta charset="UTF-8">
-    <title>Added events to your profile</title>
+    <title>See all events and create an event</title>
 
 </head>
 <body>
 
 <!-- Modal -->
-<div class="modal fade" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="purchase-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog " role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Information om dette event</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Your basket</h4>
             </div>
-
             <div class="modal-body">
                 <table class="table">
                     <thead>
                     <tr>
-                        <p>Her vil blive vist information om det enkelte event!</p>
+                        <th></th>
+                        <th>Title</th>
+                        <th>Created</th>
+                        <th>Startdate</th>
+                        <th>Enddate</th>
+                        <th>Description</th>
                     </tr>
                     </thead>
                     <tbody id="modal-tbody">
                     </tbody>
                 </table>
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Luk</button>
-                <button type="button" class="btn btn-default" id="showComments-button">Vis kommentarer</button>
-                <button type="button" class="btn btn-default" id="attendEvent-button">Tilmeld event</button>
-
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <a href="../HTML/userEvents.html">
+                    <button type="button" class="btn btn-success">Proceed to your attending events list</button>
+                </a>
             </div>
         </div>
     </div>
@@ -44,17 +52,19 @@
 <div class="container">
 
     <div class="row" id="nav-container"></div>
-
+    <div class="row">
+        <div class="col-lg-9">
     <div class="page-header">
-        <h1 align="CENTER">Events</h1>
-        <button type="button" class="btn btn-default" id="createEvent-button">Create event</button>
+        <h1>  Listed below is all the available events at Nexus Cafe!</h1>
     </div>
 
-    <div class="row" id="event-list">
+    <div class="row" id="eventList">
 
     </div>
+
+    </div>
+ </div>
 </div>
-
 <footer class="footer">
     <div class="container">
         <p class="text-muted" align="CENTER">2017 © All rights reserved - Cafe Nexus Inc.</p>

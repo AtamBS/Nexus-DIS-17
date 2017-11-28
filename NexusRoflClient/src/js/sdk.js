@@ -41,16 +41,16 @@ const SDK = {
             }, cb)
         },
 
-        findAll: (cb) => {
+        current: () => {
+            return localStorage.getItem("userId");
+        },
+
+        listOfUsers: (cb) => {
             SDK.request({
                     method: "GET",
                     url: "/users"
-
                 },
                 cb);
-        },
-        current: () => {
-            return SDK.Storage.load("userId");
         },
 
         logOut: () => {
@@ -71,15 +71,21 @@ const SDK = {
 
                 //On login-error
                 if (err) return cb(err);
-                /*
-                                SDK.Storage.persist("tokenId", data.id);
-                                SDK.Storage.persist("userId", data.userId);
-                                SDK.Storage.persist("user", data.user);
-                */
+
+                // https://stackoverflow.com/questions/38552003/how-to-decode-jwt-token-in-javascript
+                let token = data;
+
+                var base64Url = token.split('.')[0];
+                var base64 = base64Url.replace('-', '+').replace('_', '/');
+                console.log(JSON.parse(window.atob(base64)));
+
+                localStorage.setItem("userId", JSON.parse(window.atob(base64)).kid);
                 localStorage.setItem("token", data);
+
+
                 cb(null, data);
 
-            });
+            }, cb);
         },
         loadNav: (cb) => {
             $("#nav-container").load("nav.html", () => {
@@ -91,7 +97,7 @@ const SDK = {
         }
     },
 
-    //Følgende metoder bliver tilgængelige, når man er logget ind som bruger.
+
     Event: {
         createEvent: (owner_id, title, startDate, endDate, description, cb) => {
             SDK.request({
@@ -109,7 +115,7 @@ const SDK = {
                 }
             }, cb)
         },
-        findAllEvents: (cb) => {
+        listOfEvents: (cb) => {
             SDK.request({
 
                 method: "GET",
@@ -120,8 +126,21 @@ const SDK = {
             }, cb)
         },
     },
+    Post: {
+        listOfPosts: (cb) =>{
+            SDK.request({
+                method: "GET",
+                url: "/posts",
+                headers: {
+                    Authorization: "Bearer " + SDK.Storage.load("token")
+                }
 
-        Storage: {
+            }, cb)
+
+        },
+
+    },
+    Storage: {
             prefix: "CafeNexusSDK", //Prefix for at det ikke bliver overwritet af andre med samme navn.
             persist: (key, value) => {
                 window.localStorage.setItem(SDK.Storage.prefix + key, (typeof value === 'object') ? JSON.stringify(value) : value)

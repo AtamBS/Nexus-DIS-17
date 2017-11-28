@@ -1,7 +1,7 @@
 $(document).ready(() => {
 
     SDK.User.loadNav();
-    //Eventsne er const, så de ikke ændres og desuden optager det færre ressourcer.
+    //Events'ne er const, så de ikke ændres og desuden optager det færre ressourcer.
     $("#create-button").click(() => {
         const title = $("#inputTitle").val();
         const startDate = $("#inputStartDate").val();

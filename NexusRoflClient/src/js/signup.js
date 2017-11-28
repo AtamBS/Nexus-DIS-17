@@ -14,8 +14,12 @@ $(document).ready(() => {
         const password = $("#inputPassword").val();
         const description = $("#inputDescription").val();
 
-        SDK.User.createUser(password, firstName, lastName, email, description, gender, major, semester, (err, data) => {
+        SDK.User.createUser(firstName, lastName, email, description, gender, major, password, semester, (err, data) => {
             console.log(err, data);
+
+            if (err) {
+                return "failure";
+            }
         });
 
         //Dette er bare en simpel if-else til at sørge for at brugeren ikke glemmer et felt (fejl 40)
@@ -28,17 +32,15 @@ $(document).ready(() => {
             !semester    ||
             !password
 
-        ){ alert('Indtast venligst alle oplysninger');
+        ){ alert('Please fill out all the fields');
 
         } else {
 
             //Hvis brugeren har indtastet alle oplysninger, så bliver brugeren oprettet.
-            window.alert("Bruger oprettet!");
+            window.alert("User created!");
             window.location.href = "../HTML/index.html";
 
-            if (err) {
-                return "fejl";
-            }
+
         }
     });
 });
