@@ -12,55 +12,40 @@
 </head>
 <body>
 
-<!-- Modal -->
-<div class="modal fade" id="purchase-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog " role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Your basket</h4>
-            </div>
-            <div class="modal-body">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th></th>
-                        <th>Title</th>
-                        <th>Created</th>
-                        <th>Startdate</th>
-                        <th>Enddate</th>
-                        <th>Description</th>
-                    </tr>
-                    </thead>
-                    <tbody id="modal-tbody">
-                    </tbody>
-                </table>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <a href="../HTML/userEvents.html">
-                    <button type="button" class="btn btn-success">Proceed to your attending events list</button>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <div class="container">
 
     <div class="row" id="nav-container"></div>
     <div class="row">
         <div class="col-lg-9">
+            <div class="page-header">
+                <h1>  Listed below is all the available events at Nexus Cafe!</h1>
+            </div>
+
+
+
+            <div class="container">
     <div class="page-header">
-        <h1>  Listed below is all the available events at Nexus Cafe!</h1>
-    </div>
-
-    <div class="row" id="eventList">
 
     </div>
+
+                <table class="table">
+                <thead>
+                <tr>
+
+                    <th>Title</th>
+                    <th>Created</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody id="eventList">
+                </tbody>
+
+
+                </table>
+            </div>
+
 
     </div>
  </div>

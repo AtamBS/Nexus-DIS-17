@@ -11,8 +11,6 @@ $(document).ready(() => {
             if (err && err.xhr.status === 401) {
                 $(".form-group").addClass("has-error");
 
-             //
-             alert('Emailen matcher ikke adgangskoden');
 
             }
             else if (err){

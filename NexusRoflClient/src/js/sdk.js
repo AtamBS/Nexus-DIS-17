@@ -126,6 +126,7 @@ const SDK = {
             }, cb)
         },
     },
+
     Post: {
         listOfPosts: (cb) =>{
             SDK.request({
