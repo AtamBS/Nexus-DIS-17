@@ -13,7 +13,7 @@ $(document).ready(() => {
                 <td>${event.startDate}</td>
                 <td>${event.endDate}</td>
                 <td>${event.description}</td>
-                <td> <button type="button" class="btn btn-success join-event" id="joinEvent">Join event</button></td>
+                <td> <button type="button" class="btn btn-success details-event" id="detailsEvent">Details on event</button></td>
                 
            
         `

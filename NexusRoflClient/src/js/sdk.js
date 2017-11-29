@@ -48,7 +48,10 @@ const SDK = {
         listOfUsers: (cb) => {
             SDK.request({
                     method: "GET",
-                    url: "/users"
+                    url: "/users",
+                    headers: {
+                        Authorization: "Bearer " + localStorage.getItem("token")
+                    }
                 },
                 cb);
         },
@@ -122,9 +125,18 @@ const SDK = {
                 url: "/events",
                 headers: {
                     Authorization: "Bearer " + SDK.Storage.load("token")
-                }
+                },
             }, cb)
         },
+        specificEvent: (cb) => {
+            SDK.request({
+                method: "GET",
+                url: "/events/" + SDK.Storage.load("")
+                }
+
+            )
+        }
+
     },
 
     Post: {
