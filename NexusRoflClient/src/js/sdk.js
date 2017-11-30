@@ -140,6 +140,23 @@ const SDK = {
     },
 
     Post: {
+
+        createPost: (ownerId, content, eventId, cb) => {
+            SDK.request({
+                data: {
+                    owner: ownerId,
+                    content: content,
+                    event: eventId,
+                },
+                url: "/posts",
+                method: "POST",
+                headers: {
+                    Authorization: "Bearer " + SDK.Storage.load("token")
+                }
+            }, cb)
+
+        },
+
         listOfPosts: (cb) =>{
             SDK.request({
                 method: "GET",

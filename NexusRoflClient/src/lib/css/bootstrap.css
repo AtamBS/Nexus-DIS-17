@@ -2099,7 +2099,9 @@ pre code {
 
   }
   .col-lg-11 {
-    width: 66.66666667%;
+    height:150px;
+    width: 80%;
+    left: 8%;
   }
   .col-lg-10 {
     height:800px;
@@ -2109,8 +2111,7 @@ pre code {
   .col-lg-9 {
     height:350px;
     width: 80%;
-
-
+    left: 8%;
   }
   .col-lg-8 {
     height:435px;
