@@ -13,9 +13,7 @@ $(document).ready(() => {
                 <td>${event.startDate}</td>
                 <td>${event.endDate}</td>
                 <td>${event.description}</td>
-                <td> <button type="button" class="btn btn-success details-event" id="detailsEvent">Details on event</button></td>
                 <td> <button type="button" class="btn btn-success commentEvent-button" data-event-id="${event.id}" >Comment the event</button></td>
-           
            </tr>
         `;
 //Append()-metoden indsætter det angivet indhold i slutningen af de valgte elementer.
@@ -28,7 +26,7 @@ $(document).ready(() => {
 
                 SDK.Storage.persist("event-id", eventId);
 
-                window.location.href = "showEvent.html";
+                window.location.href = "../HTML/events.html";
 
             });
     });

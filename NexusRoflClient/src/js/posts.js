@@ -1,33 +1,25 @@
 $(document).ready(() => {
 
-    SDK.User.loadNav();
-    const $postList = $("#postList");
-    SDK.Event.listOfPosts((err, posts) => {
-        posts.forEach(() => {
+    const $postTable = $("#postTable");
 
-            const postHTML = `
-            <tr>
-                <td>${posts.owner.id}</td>
-                <td>${posts.event.id}</td>
-                <td>${posts.id}</td>
-                <td>${posts.content}</td>
-                <td> <button class="btn btn-default commentPost-button" data-post-id="${posts.id}">Comment the post</button></td>
-            </tr>
-         `;
-            $postList.append(postHtml);
+    SDK.Post.listOfPosts((err, posts) =>{
 
-            $(".commentPost-button").unbind().click(function () {
-                const postId =$(this).data("post-id");
+        console.log(JSON.stringify(posts));
 
-                SDK.Storage.persist("postId", postId);
 
-                window.location.href = "commentToPost.html";
+        posts.forEach((post) =>{
+            const postsHTML =`
+                <tr>
+                <td>${post.owner}</td>
+                <td>${post.content}</td>
+                <td>${post.created}</td>
+                <td> <button type="button" class="btn btn-success commentPost-button" data-post-id="${post.id}" >Comment the post</button></td>
+                </tr>
+                `;
 
-            });
+            $postTable.append(postsHTML)
 
         });
-
-
-
     });
 });
+

@@ -141,12 +141,11 @@ const SDK = {
 
     Post: {
 
-        createPost: (ownerId, content, eventId, cb) => {
+        createPost: (owner, content, cb) => {
             SDK.request({
                 data: {
-                    owner: ownerId,
+                    owner: owner,
                     content: content,
-                    event: eventId,
 
                 },
                 url: "/posts",
@@ -167,6 +166,20 @@ const SDK = {
                 }
 
             }, cb)
+
+        },
+
+        CommentPosts: (owner, content,parent_id, cb) => {
+            SDK.request({
+                data: {
+                    owner: owner,
+                    content: content,
+                    parent: parent_id
+                },
+                method: "POST",
+                url: "/posts",
+            }, cb);
+
 
         },
 
