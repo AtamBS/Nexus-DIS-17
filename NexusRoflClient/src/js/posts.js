@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-    const $postTable = $("#postTable");
+    const $postList = $("#postList");
 
     SDK.Post.listOfPosts((err, posts) =>{
 
@@ -17,8 +17,17 @@ $(document).ready(() => {
                 </tr>
                 `;
 
-            $postTable.append(postsHTML)
+            $postList.append(postsHTML)
 
+
+            $(".commentPost-button").unbind().click(function () {
+                const postId =$(this).data("post-id");
+
+                SDK.Storage.persist("postId", postId);
+
+                window.location.href = "commentToPost.html";
+
+            });
         });
     });
 });
