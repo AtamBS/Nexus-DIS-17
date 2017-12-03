@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <link rel="stylesheet" href="../lib/css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css">
 
+    <style>
+        table {
+            border-radius: 5px;
+            width: 1140px;
+            height: 100%;
+            table-layout: fixed;
+        }
+
+        td, th {
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
 
     <meta charset="UTF-8">
-    <title>See all users</title>
+    <title>See all posts- Cafe Nexus</title>
 
 </head>
 <body>
+
+
+
 <div class="container">
-
     <div class="row" id="nav-container"></div>
+    <h2>Posts</h2>
     <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-5">
             <div class="page-header">
-                <h1>Listed below is all the users at Cafe Nexus!</h1>
-            </div>
 
-
-
-
-
-            <div class="container">
-                <div class="page-header">
-
-                </div>
-
-                <table class="table">
-
-                    <thead>
+                <table>
                     <tr>
+                        <th>OwnerId</th>
+                        <th>EventId</th>
+                        <th>PostsId</th>
+                        <th>Content</th>
+                        <th>Comment</th>
 
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>Major</th>
-                        <th>Semester</th>
-                        <th>Description</th>
+
                     </tr>
-                    </thead>
-                    <tbody id="userList">
-                    </tbody>
-
-
                 </table>
+                <div id="postList" style=" width: 1140px;">
+                </div>
             </div>
 
-        </div>
-    </div>
-</div>
+
+
 <footer class="footer">
     <div class="container">
         <p class="text-muted" align="CENTER">2017 © All rights reserved - Cafe Nexus Inc.</p>
@@ -60,13 +61,9 @@
 <script src="../lib/js/jquery-3.2.1.js"></script>
 <script src="../lib/js/bootstrap.js"></script>
 <script src="../js/sdk.js"></script>
-<script src="../js/users.js"></script>
+<script src="../js/posts.js"></script>
 <script>
     SDK.User.loadNav();
 </script>
-
 </body>
-
-
-
 </html>

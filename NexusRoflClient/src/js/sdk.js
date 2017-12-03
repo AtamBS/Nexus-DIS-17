@@ -131,11 +131,11 @@ const SDK = {
         specificEvent: (cb) => {
             SDK.request({
                 method: "GET",
-                url: "/events/" + SDK.Storage.load("")
-                }
+                url: "/events/" +
+                SDK.Storage.load("event-id")
+            }, cb)
 
-            )
-        }
+        },
 
     },
 
@@ -147,6 +147,7 @@ const SDK = {
                     owner: ownerId,
                     content: content,
                     event: eventId,
+
                 },
                 url: "/posts",
                 method: "POST",

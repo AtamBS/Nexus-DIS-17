@@ -12,7 +12,7 @@ $(document).ready(() => {
         SDK.Event.createEvent(owner_id, title, startDate, endDate, description, (err, data)=> {
         });
 
-        window.alert("Event Oprettet!");
+        window.alert("Event created!");
         });
 
         $("#return-button").click(() => {
