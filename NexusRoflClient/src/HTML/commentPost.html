@@ -3,8 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link rel="stylesheet" href="../lib/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/main.css">
+
 </head>
 <body>
 
+<div class="container">
+
+    <div class="row" id="nav-container"></div>
+
+    <div class="page-header">
+        <h1 align="CENTER">Create comment to post</h1>
+    </div>
+
+
+    <div class="row" id="postTable">
+
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-4">
+
+            <label class="control-label" for="inputContent">New comment:</label>
+
+            <textarea rows="6" cols="50" id="inputContent"></textarea>
+
+            <button type= "button" class="btn btn-default" id="commentPost-button">Create comment</button>
+            <button type= "button" class="btn btn-default" id="return-button">Go back</button>
+
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted" align="CENTER">2017 © All rights reserved - Cafe Nexus Inc.</p>
+        <p class="text-muted" align="CENTER">Adam Brønnum Schou 3. Semester HA(IT)</p>
+    </div>
+</footer>
+
+<script src="../lib/js/jquery-3.2.1.js"></script>
+<script src="../lib/js/bootstrap.js"></script>
+<script src="../js/sdk.js"></script>
+<script src="../js/commentPost.js"></script>
+<script>
+    SDK.User.loadNav();
+</script>
 </body>
 </html>

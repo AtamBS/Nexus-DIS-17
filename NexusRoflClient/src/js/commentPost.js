@@ -3,10 +3,11 @@ $(document).ready(() => {
 
     $("#commentPost-button").click(() => {
         const owner = SDK.User.current();
-        const parent_id =SDK.Storage.load("postId");
         const content = $("#inputContent").val();
+        const parent_id =SDK.Storage.load("postId");
 
-        SDK.Post.CommentPosts(owner_id, content, parent_id, (err, data) => {
+
+        SDK.Post.commentPosts(owner, content, parent_id, (err, data) => {
             if(err && err.xhr.status ==401) {
                 $(".form-group").addClass("Has error");
 
@@ -15,13 +16,11 @@ $(document).ready(() => {
                 window.location.href="../HTML/posts.html";
             }
 
-
         });
 
-
-
-
     });
-
+    $("#return-button").click(() => {
+        window.location.href = "../HTML/index.html";
+    });
 
 });

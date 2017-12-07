@@ -60,7 +60,7 @@ const SDK = {
             SDK.Storage.remove("token");
             SDK.Storage.remove("userId");
             SDK.Storage.remove("user");
-            window.location.href = "../HTML/index.html";
+            window.location.href = "../HTML/login.html";
         },
         login: (email, password, cb) => {
             SDK.request({
@@ -141,11 +141,12 @@ const SDK = {
 
     Post: {
 
-        createPost: (owner, content, cb) => {
+        createPost: (owner, content, post_id, cb) => {
             SDK.request({
                 data: {
                     owner: owner,
                     content: content,
+                    post: post_id,
 
                 },
                 url: "/posts",
@@ -169,7 +170,7 @@ const SDK = {
 
         },
 
-        CommentPosts: (owner, content,parent_id, cb) => {
+        commentPosts: (owner, content,parent_id, cb) => {
             SDK.request({
                 data: {
                     owner: owner,
@@ -180,10 +181,20 @@ const SDK = {
                 url: "/posts",
             }, cb);
 
-
         },
 
+        listOfCommentPosts: (cb) =>{
+            SDK.request({
+                method: "GET",
+                url: "/posts/" + SDK.Storage.load("post_id"),
+                headers: {
+                    Authorization: "Bearer" + SDK.Storage.load("post_id")
+                },
+             },cb)
+
+        },
     },
+
     Storage: {
             prefix: "CafeNexusSDK", //Prefix for at det ikke bliver overwritet af andre med samme navn.
             persist: (key, value) => {

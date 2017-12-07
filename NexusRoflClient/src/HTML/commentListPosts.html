@@ -20,16 +20,15 @@
     </style>
 
     <meta charset="UTF-8">
-    <title>See all posts- Cafe Nexus</title>
+    <title>Comments to post- Cafe Nexus</title>
 
 </head>
 <body>
 
 
-
 <div class="container">
     <div class="row" id="nav-container"></div>
-    <h2>Posts</h2>
+    <h2>Comments to post</h2>
     <div class="row">
         <div class="col-lg-6">
             <div class="page-header">
@@ -38,32 +37,30 @@
                     <thead>
                     <tr>
                         <th>Creator ID</th>
-                        <th>Description</th>
-                        <th>Created</th>
-                        <th>Create comment</th>
-                        <th>Comments</th>
+                        <th>Post ID</th>
+                        <th>Content</th>
                     </tr>
                     </thead>
 
-                    <tbody id="postList">
+                    <tbody id="commentListPosts">
                     </tbody>
                 </table>
 
 
 
-<footer class="footer">
-    <div class="container">
-        <p class="text-muted" align="CENTER">2017 © All rights reserved - Cafe Nexus Inc.</p>
-        <p class="text-muted" align="CENTER">Adam Brønnum Schou 3. Semester HA(IT)</p>
-    </div>
-</footer>
+                <footer class="footer">
+                    <div class="container">
+                        <p class="text-muted" align="CENTER">2017 © All rights reserved - Cafe Nexus Inc.</p>
+                        <p class="text-muted" align="CENTER">Adam Brønnum Schou 3. Semester HA(IT)</p>
+                    </div>
+                </footer>
 
 <script src="../lib/js/jquery-3.2.1.js"></script>
 <script src="../lib/js/bootstrap.js"></script>
 <script src="../js/sdk.js"></script>
-<script src="../js/posts.js"></script>
+<script src="../js/commentListPosts.js"></script>
 <script>
-    SDK.User.loadNav();
+SDK.User.loadNav();
 </script>
 </body>
 </html>
