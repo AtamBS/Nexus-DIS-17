@@ -2,12 +2,10 @@ $(document).ready(() => {
 
     const $postList = $("#postList");
 
-    SDK.Post.listOfPosts((err, posts) =>{
-
-        //console.log(JSON.stringify(posts));
+    SDK.Post.listOfPosts((err, posts) => {
 
 
-        posts.forEach((post) =>{
+        posts.forEach((post) => {
 
             const postsHTML =`
                 <tr>

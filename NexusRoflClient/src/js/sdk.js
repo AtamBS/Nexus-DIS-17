@@ -183,10 +183,10 @@ const SDK = {
 
         },
 
-        listOfCommentPosts: (cb) =>{
+        listOfCommentPosts: (id, cb) =>{
             SDK.request({
                 method: "GET",
-                url: "/posts/" + SDK.Storage.load("post_id"),
+                url: "/posts/" +id,
                 headers: {
                     Authorization: "Bearer" + SDK.Storage.load("post_id")
                 },

@@ -2,16 +2,16 @@ $(document).ready(() => {
 
     const $commentListPosts = $("#commentListPosts");
 
-    SDK.Post.listOfCommentPosts((err, post) => {
-
-        post.forEach((post) => {
+    SDK.Post.listOfCommentPosts(1, (err, post) => {
+        console.log(post);
+        post.comments.forEach((comment) => {
 
             const commentsHTML = `
 
             <tr>
-            <td>${post.owner.id}</td>
-            <td>${post.id}</td>
-            <td>${post.content}</td>
+            <td>${comment.owner.id}</td>
+            <td>${comment.id}</td>
+            <td>${comment.content}</td>
             </tr>
             
     
