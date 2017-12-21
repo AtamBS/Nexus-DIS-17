@@ -25,8 +25,10 @@ const SDK = {
         });
 
     },
-//Opretter en bruger
+
     User: {
+
+//Opretter en bruger
         createUser: (firstName, lastName, email, description, gender, major, password, semester, cb) => {
             SDK.request({
                 data: {
