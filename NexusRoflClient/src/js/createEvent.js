@@ -1,3 +1,4 @@
+//Metode til at lave et event.
 $(document).ready(() => {
 
     SDK.User.loadNav();

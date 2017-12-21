@@ -1,9 +1,13 @@
+// I SDK'en ligger alle metoder, som kommunikerer med databasen eller bruges i flere metoder på klienten.
+// Koden her tager inspireret af Jesper Bruun Hansens kode, som er tilgængeligt på Gitbub.
+
 const SDK = {
-    serverURL: "http://localhost:8080/api",
+    serverURL: "Https://localhost:8443/api",
     request: (options, cb) => {
 
         let token = {"AUTHORIZATION": localStorage.getItem("token")}
 
+// AJAX kald er en webudviklingsteknik, som her sætter parametrene for kommunikationen med serveren.
         $.ajax({
             url: SDK.serverURL + options.url,
             method: options.method,
@@ -21,8 +25,7 @@ const SDK = {
         });
 
     },
-
-
+//Opretter en bruger
     User: {
         createUser: (firstName, lastName, email, description, gender, major, password, semester, cb) => {
             SDK.request({
@@ -41,10 +44,12 @@ const SDK = {
             }, cb)
         },
 
+//Sætter specifik bruger ved brug af user-objektet i localStorage.
         current: () => {
             return localStorage.getItem("userId");
         },
 
+//Lister alle brugere af Cafe Nexus.
         listOfUsers: (cb) => {
             SDK.request({
                     method: "GET",
@@ -55,13 +60,16 @@ const SDK = {
                 },
                 cb);
         },
-
+//Metode til at logge ud, som tager token, userID og tilsidst useren ud af programmet.
         logOut: () => {
             SDK.Storage.remove("token");
             SDK.Storage.remove("userId");
             SDK.Storage.remove("user");
             window.location.href = "../HTML/login.html";
         },
+
+//Login-metode
+
         login: (email, password, cb) => {
             SDK.request({
                 data: {
@@ -72,10 +80,11 @@ const SDK = {
                 method: "POST"
             }, (err, data) => {
 
-                //On login-error
+
                 if (err) return cb(err);
 
-                // https://stackoverflow.com/questions/38552003/how-to-decode-jwt-token-in-javascript
+// Inspiration fra følgende IP-adresse: https://stackoverflow.com/questions/38552003/how-to-decode-jwt-token-in-javascript
+
                 let token = data;
 
                 var base64Url = token.split('.')[0];
@@ -90,6 +99,8 @@ const SDK = {
 
             }, cb);
         },
+
+//Loader brugermenuen i toppen af programmet.
         loadNav: (cb) => {
             $("#nav-container").load("nav.html", () => {
                 const currentUser = SDK.User.current();
@@ -102,6 +113,9 @@ const SDK = {
 
 
     Event: {
+
+//Laver et event.
+
         createEvent: (owner_id, title, startDate, endDate, description, cb) => {
             SDK.request({
                 data: {
@@ -118,6 +132,9 @@ const SDK = {
                 }
             }, cb)
         },
+
+//Liste af alle oprettet events.
+
         listOfEvents: (cb) => {
             SDK.request({
 
@@ -128,18 +145,12 @@ const SDK = {
                 },
             }, cb)
         },
-        specificEvent: (cb) => {
-            SDK.request({
-                method: "GET",
-                url: "/events/" +
-                SDK.Storage.load("event-id")
-            }, cb)
-
-        },
 
     },
 
     Post: {
+
+//Laver et post.
 
         createPost: (owner, content, post_id, cb) => {
             SDK.request({
@@ -158,6 +169,8 @@ const SDK = {
 
         },
 
+//Liste over alle posts.
+
         listOfPosts: (cb) =>{
             SDK.request({
                 method: "GET",
@@ -169,6 +182,8 @@ const SDK = {
             }, cb)
 
         },
+
+//Kommenter et post.
 
         commentPosts: (owner, content,parent_id, cb) => {
             SDK.request({
@@ -183,6 +198,8 @@ const SDK = {
 
         },
 
+//Liste over alle kommentarer til posts.
+
         listOfCommentPosts: (id, cb) =>{
             SDK.request({
                 method: "GET",
@@ -194,6 +211,8 @@ const SDK = {
 
         },
     },
+
+//!!!!!!
 
     Storage: {
             prefix: "CafeNexusSDK", //Prefix for at det ikke bliver overwritet af andre med samme navn.

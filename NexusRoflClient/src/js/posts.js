@@ -1,5 +1,5 @@
+//Liste over alle posts.
 $(document).ready(() => {
-
     const $postList = $("#postList");
 
     SDK.Post.listOfPosts((err, posts) => {
@@ -19,7 +19,7 @@ $(document).ready(() => {
 
             $postList.append(postsHTML)
 
-
+            //Når der trykkes på knappen, bliver det muligt at lave en kommentar til det specifikke post.
             $(".commentPost-button").unbind().click(function () {
                 const postId =$(this).data("post-id");
 
@@ -29,9 +29,9 @@ $(document).ready(() => {
 
             });
 
+            //Når der trykkes på knappen, bliver det muligt at se alle kommentarer til de forskellige posts.
             $(".commentListPosts-button").unbind().click(function () {
                 const postId =$(this).data("show-post-id");
-
                 SDK.Storage.persist("postId", postId);
 
                 window.location.href = "../HTML/commentListPosts.html";

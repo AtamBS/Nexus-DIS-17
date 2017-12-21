@@ -1,3 +1,4 @@
+//Liste over alle oprettede brugere på Cafe Nexus.
 $(document).ready(() => {
 
     SDK.User.loadNav();

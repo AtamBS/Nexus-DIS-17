@@ -1,3 +1,4 @@
+//Liste over alle kommentarer til posts.
 $(document).ready(() => {
 
     const $commentListPosts = $("#commentListPosts");
